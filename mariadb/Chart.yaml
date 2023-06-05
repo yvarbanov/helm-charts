@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mariadb
+description: A Helm chart for deploying a persistent MariaDB instance
+version: 0.1.0

@@ -1,0 +1,14 @@
+image: mariadb:latest
+database: export
+
+credentials:
+  rootUser: admin
+  # rootPassword: random
+  username: maria
+  # password: random
+
+persistence:
+  enabled: true
+  storageClassName: gp2
+  accessMode: ReadWriteOnce
+  size: 10Gi
