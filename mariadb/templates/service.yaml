@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: {{ include "mariadb.fullname" . }}
+  type: NodePort
   ports:
-    - name: mysql
-      protocol: TCP
-      port: 3306
-      targetPort: 3306
+    - port: 3306
+      nodePort: 30036
+      name: mysql

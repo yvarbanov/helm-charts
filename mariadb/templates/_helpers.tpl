@@ -22,10 +22,6 @@ Helper template file to improve variable naming in templates.
 {{-   printf "%s-secret" (include "mariadb.shortname" .) }}
 {{- end }}
 
-{{- define "mariadb.route.name" }}
-{{-   printf "%s-route" (include "mariadb.shortname" .) }}
-{{- end }}
-
 {{- define "mariadb.pvc.name" }}
 {{-   printf "%s-pvc" (include "mariadb.shortname" .) }}
 {{- end }}
