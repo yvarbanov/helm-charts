@@ -31,16 +31,20 @@ spec:
                 secretKeyRef:
                   name: {{ .Release.Name }}-mongodb-auth
                   key: adminPassword
+            {{- if .Values.credentials.rwUsername }}
             - name: MONGO_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}-mongodb-auth
                   key: rwUsername
+            {{- end}}
+            {{- if .Values.credentials.rwPassword }}
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}-mongodb-auth
                   key: rwPassword
+            {{- end}}
           volumeMounts:
             - name: {{ .Release.Name }}-persistent-storage
               mountPath: /data/db
