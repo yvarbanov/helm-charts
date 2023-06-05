@@ -1,0 +1,20 @@
+image: mongo:latest
+credentials:
+  adminUsername: admin
+  adminPassword: pa$$word
+  rwUsername: rwUser
+  rwPassword: rwPa$$
+replicaSet:
+  enabled: false
+persistence:
+  enabled: true
+  storageClass: gp2
+  size: 10Gi
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 4
+  cpuLimit: 90
+  memLimit: 90
+serviceAccount: false
+roleBinding: false

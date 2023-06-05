@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Release.Name }}-mongodb-route
+spec:
+  to:
+    kind: Service
+    name: {{ .Release.Name }}-mongodb
+    weight: 100
+  port:
+    targetPort: 27017
